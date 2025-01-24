@@ -1,0 +1,241 @@
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #121212;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+  margin: 0;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+#frase {
+  margin-top: 90px;
+  font-size: 24px;
+  text-align: center;
+  color: #ffffff;
+  transition: color 0.5s ease;
+  word-wrap: break-word;
+}
+
+#entrada {
+  margin-top: 20px;
+  padding: 15px;
+  width: 100%;
+  max-width: 400px;
+  border: 1px solid #00bfff;
+  border-radius: 8px;
+  background-color: #222;
+  color: #fff;
+  font-size: 18px;
+  text-align: center;
+  cursor: not-allowed;
+}
+
+#teclado {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 8px;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 12px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  width: 99%;
+}
+
+#pontuacaoTeclado {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 8px;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 12px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  width: 99%;
+}
+
+.tecla,
+.tecla-pontuacao {
+  padding: 15px;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.tecla:active,
+.tecla-pontuacao:active {
+  background-color: #555;
+  transform: scale(0.95);
+}
+
+#feedback {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #fff;
+  text-align: center;
+}
+
+#vitoriaMensagem {
+  display: none;
+  font-size: 24px;
+  color: #00ff00;
+  text-align: center;
+  margin-top: 20px;
+  font-weight: bold;
+  animation: mensagemVitoria 2s ease-out;
+}
+
+.correto {
+  color: green;
+}
+
+.erro {
+  color: red;
+}
+
+#okButton {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #00bfff;
+  color: white;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#okButton:hover {
+  background-color: #008cba;
+}
+
+@keyframes mensagemVitoria {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  #entrada {
+    font-size: 16px;
+    padding: 12px;
+    max-width: 90%;
+  }
+
+  #frase {
+    font-size: 20px;
+  }
+
+  #teclado {
+    grid-template-columns: repeat(10, 1fr);
+    gap: 6px;
+  }
+
+  .tecla,
+  .tecla-pontuacao {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  #pontuacaoTeclado {
+    grid-template-columns: repeat(10, 1fr);
+  }
+
+  #okButton {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  #entrada {
+    font-size: 14px;
+    padding: 10px;
+    max-width: 90%;
+  }
+
+  #frase {
+    font-size: 18px;
+  }
+
+  #teclado {
+    grid-template-columns: repeat(10, 1fr);
+    gap: 5px;
+    width: 95%;
+  }
+
+  .tecla,
+  .tecla-pontuacao {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  #pontuacaoTeclado {
+    grid-template-columns: repeat(10, 1fr);
+  }
+
+  #okButton {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
+@media (max-width: 402px) {
+  #teclado {
+    padding: 6px;
+    gap: 4px;
+    height: 200px;
+  }
+
+  #pontuacaoTeclado {
+    padding: 6px;
+    height: 200px;
+  }
+  .tecla,
+  .tecla-pontuacao {
+    font-size: 16px;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 353px) {
+  #teclado {
+    padding: 5px;
+    gap: 3px;
+    height: 190px;
+  }
+
+  #pontuacaoTeclado {
+    padding: 5px;
+    height: 190px;
+  }
+  .tecla,
+  .tecla-pontuacao {
+    font-size: 12px;
+    padding: 6px;
+  }
+}
+
+.tecla-up {
+  font-size: 25px;
+}
